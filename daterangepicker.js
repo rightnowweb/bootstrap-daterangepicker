@@ -69,7 +69,10 @@
 
         this.parentEl = (typeof options === 'object' && options.parentEl && $(options.parentEl).length) ? $(options.parentEl) : $(this.parentEl);
         this.container = $(DRPTemplate).appendTo(this.parentEl);
-
+        if(options.containerClass)
+        {
+            this.container.addClass(options.containerClass);
+        }
         this.setOptions(options, cb);
 
         //event listeners
